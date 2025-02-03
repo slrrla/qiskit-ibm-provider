@@ -50,7 +50,7 @@ jobs:
       - name: Build documentation
         run: tox -edocs
       - name: Upload documentation
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4   # <--- Updated to v4
         with:
           name: html_docs
           path: docs/_build/html
@@ -91,7 +91,6 @@ jobs:
             make unit-test-coverage
           done
 
-      # Still only reporting coverage once after the 20 runs.
       - name: Report coverage to coveralls.io
         uses: coverallsapp/github-action@1.1.3
         with:
