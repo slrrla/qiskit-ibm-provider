@@ -34,8 +34,15 @@ Sphinx documentation builder
 """
 
 import os
+import qiskit_sphinx_theme
+
+# If there's a get_path() helper (common in older Sphinx themes):
+html_theme_path = [qiskit_sphinx_theme.get_path()]
+
+html_theme = "qiskit_sphinx_theme"
+
 # Set env flag so that we can doc functions that may otherwise not be loaded
-# see for example interactive visualizations in qiskit.visualization.
+# see for example interactiv visualizations in qiskit.visualization.
 os.environ['QISKIT_DOCS'] = 'TRUE'
 
 # -- Project information -----------------------------------------------------
@@ -157,8 +164,7 @@ modindex_common_prefix = ['qiskit.']
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
-html_theme = 'qiskit_sphinx_theme'  # use the theme in subdir 'theme'
+
 
 html_logo = 'images/logo.png'
 #html_sidebars = {'**': ['globaltoc.html']}
