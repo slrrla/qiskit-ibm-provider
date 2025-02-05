@@ -32,3 +32,7 @@ jobs:
           encrypted_rclone_iv: ${{ secrets.encrypted_rclone_iv }}
         run: |
           tools/deploy_documentation.sh
+      - name: Debug installed packages
+        run: |
+        pip freeze
+
