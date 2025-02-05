@@ -34,10 +34,7 @@ Sphinx documentation builder
 """
 
 import os
-import qiskit_sphinx_theme
 
-# If there's a get_path() helper (common in older Sphinx themes):
-html_theme_path = [qiskit_sphinx_theme.get_path()]
 
 html_theme = "qiskit_sphinx_theme"
 
