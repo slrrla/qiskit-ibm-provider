@@ -1,11 +1,9 @@
-
 name: Docs Upload
 on:
   push:
     tags:
       - "*"
   workflow_dispatch:
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
