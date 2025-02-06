@@ -51,6 +51,7 @@ jobs:
       - name: Run integration tests 1
         run: make integration-test-1
   integration-tests-2:
+    if: github.repository_owner == 'slrrla'
     name: Run integration tests 2 - ${{ matrix.environment }}
     runs-on: ${{ matrix.os }}
     strategy:

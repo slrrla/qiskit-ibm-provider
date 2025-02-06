@@ -17,6 +17,7 @@ on:
   workflow_dispatch:
 jobs:
   unit-tests-latest-qiskit-terra:
+    if: github.repository_owner == 'slrrla'
     name: Run unit tests with latest code of Qiskit
     runs-on: "ubuntu-latest"
     env:
