@@ -39,4 +39,3 @@ jobs:
         with:
           path: ./dist/*
       - name: Deploy to Pypi
-        uses: pypa/gh-action-pypi-publish@release/v1
