@@ -206,7 +206,6 @@ jobs:
       - name: Run integration tests 3
         run: make integration-test-3
   tests-finished:
-    if: github.repository_owner == 'Qiskit'
     name: Submit code coverage metrics
     needs: [ unit-tests ]
     runs-on: ubuntu-latest
