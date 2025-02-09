@@ -1,12 +1,10 @@
 name: Randomized tests
 on:
- on:
   push:
   pull_request:
   schedule:
     - cron: '42 3 * * *'
   workflow_dispatch:
-
 jobs:
   randomized_tests:
     name: Randomized tests
