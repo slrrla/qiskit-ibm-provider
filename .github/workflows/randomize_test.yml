@@ -17,6 +17,8 @@ jobs:
           python-version: '3.8'
       - name: Install dependencies
         run: |
+          sudo apt-get update
+          sudo apt-get install -y libblas-dev liblapack-dev
           python -m pip install -U pip setuptools wheel
           python -m pip install -U \
             -c constraints.txt \
