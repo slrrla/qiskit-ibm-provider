@@ -15,10 +15,12 @@ jobs:
         name: Install Python
         with:
           python-version: '3.8'
-      - name: Install dependencies
+      - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libblas-dev liblapack-dev
+          sudo apt-get install -y libopenblas-dev liblapack-dev
+      - name: Install Python dependencies
+        run: |
           python -m pip install -U pip setuptools wheel
           python -m pip install -U \
             -c constraints.txt \
@@ -27,7 +29,6 @@ jobs:
             coveralls \
             qiskit-aer \
             -e .
-          # pytest와 관련 플러그인 설치
           python -m pip install pytest pytest-repeat pytest-rerunfailures
       - name: Run randomized tests with flaky detection
         run: |
@@ -35,4 +36,3 @@ jobs:
           pytest --count=100 --reruns 3 --reruns-delay 5 --verbose
         env:
           RUST_BACKTRACE: 1
-      
